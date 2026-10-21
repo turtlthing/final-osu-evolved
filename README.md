@@ -1,4 +1,9 @@
-live server extension visual studio code required  
-open terminal  
-enter node proxy.mjs  
-right click index.html and open with live server  
+Requirements:
+
+Node.js (v20 or later)
+Setup:
+
+Open a terminal in the project folder
+Run: npm install
+Run: npm start
+Open http://localhost:3000
