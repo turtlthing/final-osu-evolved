@@ -1,9 +1,10 @@
 Requirements:
 
-Node.js (v20 or later)
-Setup:
+Node.js (v20 or later)  
+Live server vsc extension  
+Setup:  
 
 Open a terminal in the project folder  
 Run: npm install  
 Run: npm start  
-Open http://localhost:3000  
+Open index.html with live server
