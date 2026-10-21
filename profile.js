@@ -33,15 +33,15 @@ async function showDetails(play) {
   if (play.score === 0) {
     var score = "Score was submitted on osu!lazer, which does not support score submission yet.";
 
-
   }
 
-
-
-  document.getElementById("topplays_inflation").innerHTML = `
+  else { 
+   var score = (play.score)
+  }
 
   
-
+  document.getElementById("topplays_inflation").innerHTML = `
+  
     <img src="${play.beatmapset.covers.cover}" width="100%">
     <h2>${play.beatmapset.title} [${play.beatmap.version}]</h2>
 
@@ -73,14 +73,13 @@ async function showDetails(play) {
     <div class="play-details">
     <p> Stars: ${play.beatmap.difficulty_rating}</p>
     </div>
-
+    
     </div>
-
-
+    
     <div>
 
-    <div class="play-details">
-    <h2> Score: ${score}</h2>
+    <div class="play-details_d">
+    <h2> Score: <span class="small">  ${score} </span></h2>
     </div>
 
     <div class="play-details">
@@ -97,45 +96,20 @@ async function showDetails(play) {
 
     </div>
 
-
-
     <div> 
     <div class="play-details_b">
     <h3>CS: ${play.beatmap.cs} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AR: ${play.beatmap.ar}  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OD: ${play.beatmap.accuracy}  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HP: ${play.beatmap.drain}</h3>
     </div>
 
-    
-   
     <div class="play-details_b">
     <h3>Date Submitted: ${new Date(play.created_at).toLocaleDateString()} </h3>
     </div>
-
-
+    
     <div class="play-details_c">
     <h3>Rank: ${play.rank} </h3>
     </div>
-
-
-
     </div>
-
-
-    
-
-    
-
-    <p>Rank: ${play.rank}</p>
-    <p>Max Combo: ${play.max_combo}</p>
-    <p>Mods: ${play.mods.join(", ") || "None"}</p>
-    <p>Date Submitted: ${new Date(play.created_at).toLocaleDateString()}</p>
     </div>
-
-
-
-
-    <p>PP: ${play.pp}</p>
-    <p>Score: ${play.score}</p>
-    <p>Accuracy: ${accuracy_fixed(play.accuracy)}</p>
   `;
 }
 
@@ -153,8 +127,6 @@ if (!user) {
     <p>Ranked Score: ${user.statistics.ranked_score}</p>
     <p>Play Time: ${wow_playtime(user.statistics.play_time)}</p>
     <p>Join Date: ${new Date(user.join_date).toLocaleDateString()}</p>
-
-
   `;
 }
 
@@ -169,7 +141,6 @@ if (Array.isArray(topplay) && topplay.length > 0) {
     <p>Score: ${best.score}</p>
     <p>Accuracy: ${accuracy_fixed(best.accuracy)}</p>
     </span>
-    
   `;
 }
 
@@ -178,9 +149,6 @@ if (Array.isArray(topplay) && topplay.length > 0) {
   let html = "<h2>Top Plays</h2>";
 
   topplay.forEach((play, index) => {
-
-    
-
     html += `
       <div class="play clickable" data-index="${index}">
         <div class="play-content">
@@ -190,11 +158,9 @@ if (Array.isArray(topplay) && topplay.length > 0) {
         <p>PP: ${play.pp} Rank: ${play.rank}</p>
         </span>
         <p>Score: ${play.score} [${accuracy_fixed(play.accuracy)}] Max Combo: ${play.max_combo}</p>
-        <p> Date Submitted: ${play.created_at} </p>
+        <p>Date Submitted: ${new Date(play.created_at).toLocaleDateString()} </p>   
         </div>
-        
       </div>
-
     `;
   });
 
@@ -212,21 +178,6 @@ document.getElementById("topplays").addEventListener("click", (e) => {
 });
 
 
-async function getPPBreakdown(play) {
-    const mapId = play.beatmap.id;
-    const acc = (play.accuracy * 100).toFixed(2);
-    const mods = play.mods.join("");
-
-    const url = `https://osekai.net/api/pp?map=${mapId}&acc=${acc}&mods=${mods}`;
-
-    try {
-        const res = await fetch(url);
-        return await res.json();
-    } catch (err) {
-        console.error("Osekai error:", err);
-        return null;
-    }
-}
 
 document.getElementById("loginButton").addEventListener("click", () => {
   const params = new URLSearchParams({
@@ -243,3 +194,7 @@ document.getElementById("loginButton").addEventListener("click", () => {
 const params = new URLSearchParams(window.location.search);
 
 
+// Home button
+document.getElementById("homebutton").addEventListener("click", async () => {
+      window.location.href = "index.html"
+});
