@@ -14,7 +14,7 @@ body {
   padding: 10px 20px;
 }
 
-/* Layout */
+
 .navbar {
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@ body {
 
 #home {
   display: flex;
-  gap: 20px;          /* space between boxes */
+  gap: 20px;         
   align-items: flex-start;
 }
 
@@ -107,15 +107,16 @@ body {
   background: #1a1a1a;
   padding: 20px;
   border-radius: 10px;
-  width: 40%;  
+
   height: 600px;
-  max-width: 1000px;
+  width: 50%;
   margin-top: 20px;
 }
 
 #profile img {
   border-radius: 50%;
   margin-bottom: 10px;
+
 }
 
 #profile h2 {
@@ -136,7 +137,7 @@ body {
 
 #profile-container {
   display: flex;
-  gap: 20px;          /* space between boxes */
+  gap: 20px;          
   align-items: flex-start;
 }
 
@@ -144,14 +145,14 @@ body {
 #topplays-container {
   display: flex;
   margin-top: 10px;
-  gap: 20px;          /* space between boxes */
+  gap: 20px;      
   align-items: flex-start;
   width: 100%;
   background: #111;
 }
 
 #topplays{
-  width: 60%;       /* your top plays box width */
+  width: 60%;       
   max-height: fit-content;
   background: #1a1a1a;
   padding: 20px;
@@ -163,7 +164,7 @@ body {
 }
 
 #topplays_inflation{
-  width: 60%;       /* your top plays box width */
+  width: 60%;       
   max-height: fit-content;
   background: #1a1a1a;
   padding: 20px;
@@ -174,7 +175,7 @@ body {
 
 #quests {
   width: 98%;       
-  height: 600px;     
+     
   background: #1a1a1a;
   padding: 20px;
   border-radius: 10px;
@@ -182,24 +183,13 @@ body {
   text-align: center;
 }
 
-#bottombar {
-  width: 1817px;       
-  height: 50px;     
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  text-align: center;
-  align-items: center;
-  align-content: center;
-}
 
 #profilemain_a{
   background: #1a1a1a;
   padding: 20px;
   border-radius: 10px;
   width: 50%;  
-  height: 600px;
+  height: 500px;
 
   margin-top: 20px;
 }
@@ -209,10 +199,23 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 50%;  
-  height: 600px;
+  height: 500px;
 
   margin-top: 20px;
 }
+
+#quests-container{
+  background: #1a1a1a;
+  padding: 20px;
+  margin: 20px;
+  margin-left: -2px;
+  border-radius: 10px;
+
+
+
+  margin-top: 20px;
+}
+
 
 .inline-img, .inline-text {
   display: inline-block;
@@ -223,8 +226,8 @@ body {
   background: #1a1a1a;
   padding: 20px;
   border-radius: 10px;
-  width: 60%;  
-  height: 600px;
+  width: 50%;
+  height: 500px;
   margin-top: 20px;
 }
 
@@ -262,7 +265,7 @@ body {
 div .play-details {
   display:inline-block;
   margin: 5px;
-  width: 22.785%;
+  width: 20%;
   background: #111;
   padding: 5px;
   border-radius: 5px;
@@ -282,6 +285,15 @@ div .play-details_c {
   display:inline-block;
   margin: 5px;
   width: 20%;
+  background: #111;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+div .play-details_d {
+  display:inline-block;
+  margin: 5px;
+  width: 100%;
   background: #111;
   padding: 5px;
   border-radius: 5px;
@@ -337,3 +349,174 @@ margin: 20px;
 
 }
 
+#testbutton {
+  padding: 10px 15px;
+  background: #ff66aa;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+
+#resetbutton {
+  padding: 10px 15px;
+  background: #da0707;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+#quests-daily {
+  display: flex;
+  gap: 20px;      
+  align-items: flex-start;
+  width: 100%;
+  background: #3b3b3b;
+  margin-bottom: 20px;
+}
+
+#quests-weekly {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+  background: #3b3b3b;
+  margin-bottom: 20px;
+}
+
+#quests-monthly {
+  display: flex;
+  gap: 20px;       
+  align-items: flex-start;
+  width: 100%;
+  background: #3b3b3b;
+  margin-bottom: 20px;
+}
+
+.quest-refresh {
+  margin: 0 0 10px;
+  text-align: center;
+  color: #ddd;
+}
+
+.quest-section-status {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #555;
+  color: #fff;
+  font-size: 0.5em;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.quest-section-status.is-complete {
+  background: #287a43;
+}
+
+.quest-card {
+  box-sizing: border-box;
+}
+
+.quest-complete-button {
+  padding: 10px 15px;
+  background: #ff66aa;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.quest-complete-button:hover:not(:disabled) {
+  background: #ff3388;
+}
+
+.quest-complete-button:disabled {
+  background: #555;
+  color: #ddd;
+  cursor: default;
+}
+
+.quests {
+  width: 33.33%;
+  text-align: center;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+  height: 100px;
+  margin: 40px;
+  text-align: center;
+  padding: 20px;
+
+}
+
+#viewquestsButton {
+  padding: 10px 15px;
+  background: #ff66aa;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  height: 100px;
+}
+
+.button-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+
+.small{
+  font-size: 15px;
+}
+
+.big{
+  font-size: 45px;
+}
+
+#homebutton {
+  display: inline-block;
+  padding: 10px 16px;
+  color: white;
+  border: none;
+  
+  font-weight: bold;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 35px;
+  background-color: #111;
+}
+
+#homebutton:hover {
+  background-color: #1a1a1a;
+}
+
+img {
+  max-width: 100%;
+}
+
+#profilebutton {
+  display: inline-block;
+  padding: 10px 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  vertical-align: middle;
+
+  background-color: #111;
+}
+
+#profilebutton:hover {
+  background-color: #222;
+}
